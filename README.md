@@ -7,7 +7,7 @@ In this example, we would like to emphasize security hardening for RHEL-based se
 
 we'll use nmtui to set a static IP 10.0.1.250, rename it to LXSR-01, and as we'll join to AD later set it to search for domain Xyz.com. Once the relationship has been established, we'll modify visudo to define admin rights for the AD security group Sudoers. As there will also be a regular AD group called Linuxuser to be granted non-privileged access to this server, we'll install Auditd to log security-related events such as login times. all services often need to be allowed to startup at boot, so for all future daemons let's assume we're running systemctl enable --now to accomplish this. once done we'll create an account called "localadmin" and add to the wheel group to take over privileges actions to leave the root alone for emergency purposes only.
 
-The link is a Live 5-minute video demonstration https://github.com/user-attachments/assets/bdf604b2-da3b-4386-85f0-6ac569808f42
+The link is a Live 5-minute video [demonstration](https://github.com/user-attachments/assets/bdf604b2-da3b-4386-85f0-6ac569808f42)
 
 
 After we modified ryslog.conf file to begin listening on port UDP 514, we'll want to whitelist the port in firewall-cmd. Since this won't be a public-facing server and in a live environment would've been set on a separate VLAN than the native one, we'll set the zone to default to internal. it's a default port, but to be safe we'll also check Semange ports to see if the service is associated it. To verify, we should be using ss -lunp and tcpdump -i NIC-xyz UDP port 514 to ensure connectivity is occurring.
