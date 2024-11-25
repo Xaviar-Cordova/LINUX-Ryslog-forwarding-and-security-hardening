@@ -9,6 +9,7 @@ we'll use nmtui to set a static IP 10.0.1.250, rename it to LXSR-01, and as we'l
 
 The link is a Live 5-minute video [demonstration](https://github.com/user-attachments/assets/bdf604b2-da3b-4386-85f0-6ac569808f42)
 
+![Screenshot 2024-11-25 155427](https://github.com/user-attachments/assets/d01b3810-b4b8-46de-99f6-7f5796337db1)
 
 After we modified ryslog.conf file to begin listening on port UDP 514, we'll want to whitelist the port in firewall-cmd. Since this won't be a public-facing server and in a live environment would've been set on a separate VLAN than the native one, we'll set the zone to default to internal. it's a default port, but to be safe we'll also check Semange ports to see if the service is associated it. To verify, we should be using ss -lunp and tcpdump -i NIC-xyz UDP port 514 to ensure connectivity is occurring.
 ![2024-10-07 16_04_19-QEMU (LXSR-0-1) - TightVNC Viewer](https://github.com/user-attachments/assets/35d206ab-1b63-465c-bf24-aaa5c8e16c0d)
